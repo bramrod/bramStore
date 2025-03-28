@@ -1,0 +1,707 @@
+:root {
+    --negro: rgb(8, 8, 8);
+    --azul: #007bff;
+    --azulClarito: #006fe6;
+    --white: #FFFFFF;
+    --rojo: #cd061d;
+}
+
+* {
+    margin: 0;
+    font-family: "Rubik", sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+/* Navigation Styles */
+.nav {
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 10rem;
+    width: 100%;
+}
+
+.logo a {
+    text-decoration: none;
+    color: var(--negro);
+    font-size: 1.8rem;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 2vw, 2rem);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: var(--negro);
+    font-size: 1.4rem;
+}
+
+.arrow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.icons {
+    display: flex;
+    gap: clamp(1rem, 2vw, 2.5rem);
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+a{
+    color: var(--negro);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* EL QUE SE QUEDARA */
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 80vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.mainContent::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/bc.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.5s ease;
+    transform: scale(1);
+    z-index: -1;
+}
+
+.mainContent:hover::before {
+    transform: scale(1.02);
+}
+
+.mainText {
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 10rem;
+    width: 100%;
+    color: var(--white);
+    box-sizing: border-box;
+}
+
+
+
+.mainContent h1 {
+    font-family: "Luckiest Guy", cursive;
+    font-size: clamp(3rem, 15vw, 9rem);
+}
+
+
+
+h3 {
+    margin: 0;
+    font-weight: 500;
+    font-size: clamp(1.2rem, 3vw, 2rem);
+}
+
+
+
+.buttons {
+    display: flex;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.buttons button {
+    padding: 1.4rem 3.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.buttons button:first-child {
+    background-color: var(--white);
+    color: var(--negro);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.buttons button:first-child:hover {
+    background-color: var(--var(--white));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.buttons button:last-child {
+    background-color: var(--negro);
+    color: var(--white);
+}
+
+.buttons button:last-child:hover {
+    background-color: var(--negro); /* Un gris un poco más claro al pasar el mouse */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FIRST SECTION EL QUE SE QUEDA */
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 90%;
+    margin: 3rem auto;
+}
+
+
+
+
+.cuadrito--main button {
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+    background-color: var(--azul);
+    color: var(--white);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: fit-content;
+}
+
+
+
+
+.container button{
+    font-size: 1.6rem;
+    padding: 1rem 1rem;
+    background-color: var(--azul);
+    color: var(--white);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: fit-content;
+}
+
+
+.container button:hover {
+    background-color: var(--azulClarito); /* Un azul ligeramente más oscuro */
+    transition: background-color 0.2s ease-in-out;
+}
+
+
+.cuadrito {
+    height: 20rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+}
+
+.cuadrito h3 {
+    font-size: 3rem !important;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.cuadritoDoble {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.cuadritoDoble .cuadrito {
+    flex: 1;
+    min-width: 0;
+}
+
+.cuadrito--main {
+    height: auto;
+    color: var(--white) ;
+    justify-content: flex-start;
+    align-items: flex-end;
+    text-align: right;
+    gap: 1rem;
+    background-image: url('../img/sneaker.png');
+}
+
+.cuadrito--handbag { 
+    background-image: url('../img/handbag.png'); 
+}
+
+.cuadrito--watch { 
+    background-image: url('../img/watch.png'); 
+}
+
+.cuadrito--backpack { 
+    background-image: url('../img/MOCHILA.png');
+}
+
+
+.right-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.cuadrito .label {
+    font-size: 1.4rem;
+    color: var(--white);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-weight: bolder;
+}
+
+.cuadrito .discount {
+    width: 6rem;
+    color: white;
+    font-size: 1.2rem;
+    padding: 1rem 0;
+    text-align: center;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+
+.subText-Container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5rem; /* Espaciado entre el texto y el botón */
+}
+
+
+
+
+
+/* PRODUCTS SECTION */
+
+
+.products{
+    margin: 3rem auto;
+    height: 200vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FOOTER SECTION */
+
+
+.footer {
+    background-color: var(--negro);
+    color: #fff;
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuye los elementos uniformemente */
+    align-items: center;
+    min-height: 15rem;
+}
+
+.footer-container h2 {
+    font-size: 2rem;
+}
+
+.footer-container p {
+    font-size: 1.2rem;
+    max-width: 600px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--azulClarito);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.footer-links a:hover {
+    background: var(--azul);
+    color: var(--white);
+}
+
+.footer-credit {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.footer-credit a {
+    color: var(--azulClarito);
+    text-decoration: none;
+}
+
+.footer-credit a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERIES */
+
+
+@media (max-width: 768px) {
+    .nav {
+        padding: 2rem 4rem;
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--white);
+        padding: 1rem 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    .mainText {
+        padding: 0 5rem;
+        align-items: center;
+    }
+
+    .mainContent {
+        min-height: 60vh;
+        align-items: center;
+    }
+
+    .cuadritoDoble {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+
+}
+
+@media (max-width: 480px) {
+    .nav {
+        padding: 1rem 2rem;
+    }
+
+    .mainText {
+        padding: 0 2rem;
+    }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .nav {
+        flex-wrap: nowrap; /* Evita que los elementos se envuelvan a otra línea */
+        padding: 2rem 4rem;
+        position: relative;
+        justify-content: space-between; /* Mantiene el espaciado entre logo, toggle e íconos */
+    }
+
+    .menu-toggle {
+        display: block;
+        order: 2;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: white;
+        padding: 1rem 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .icons {
+        order: 3;
+        justify-content: flex-end; /* Alinea los íconos a la derecha */
+        width: auto; /* Evita que ocupe todo el ancho */
+    }
+
+    .logo {
+        order: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav {
+        padding: 1rem 2rem;
+    }
+
+    .nav-menu {
+        gap: 0.75rem;
+    }
+
+    .icons {
+        gap: clamp(rem, 1.5vw, 1rem); /* Reduce el espacio entre íconos en pantallas muy pequeñas */
+    }
+}
+
+
+
+
+@media (max-width: 768px) {
+    .mainText {
+        padding: 0 5rem;
+    }
+    
+    .mainContent {
+        min-height: 60vh;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .mainText {
+        padding: 0 2rem;
+    }
+}
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+
+    .logo h2{
+        font-size: 2rem;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        margin: 3rem auto;
+        width: 100%; /* Ensure it takes most of the width */
+        padding: 1rem; /* Add some padding */
+    }
+
+    .right-section {
+        width: 100%; /* Ensure full width */
+    }
+
+    .cuadritoDoble {
+        flex-direction: column; /* Stack items vertically */
+        gap: 2rem; /* Add space between stacked items */
+    }
+
+
+    .cuadrito--main {
+        height: auto;
+        align-items: start; /* Center content */
+        text-align: left; /* Center text */
+    }
+
+
+}
+
+
+@media (max-width: 412px) {
+    .mainContent::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../img/bc.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: transform 0.5s ease;
+        transform: scale(1);
+        z-index: -1;
+        background-position: -39rem center; /* Mueve el fondo 50px a la izquierda */
+    }
+}
+
+
+
+
+
+
+@media (max-width: 390px) {
+    .mainContent::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../img/bc.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: transform 0.5s ease;
+        transform: scale(1);
+        z-index: -1;
+        background-position: -35rem center; /* Mueve el fondo 50px a la izquierda */
+    }
+}
+
+

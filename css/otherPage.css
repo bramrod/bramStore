@@ -16,14 +16,18 @@ html {
     font-size: 62.5%;
 }
 
+
 body {
     font-size: 1.6rem;
     margin: 0;
     padding: 0;
-    height: 100vh;
+    min-height: 100vh;
     background-image: url('../img/otherPage.png');
     background-size: cover;
+    display: flex;
+    flex-direction: column;
 }
+
 
 
 a{
@@ -33,6 +37,10 @@ a{
 
 
 
+main{
+    color: var(--white);
+    margin: auto;
+}
 
 
 
@@ -95,20 +103,16 @@ a{
 
 
 
-
-
-
 /* Main Content Styles */
 .mainContent {
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 100vh;
-    padding: 2rem 0; /* Agrega algo de padding para evitar que se pegue demasiado en pantallas pequeñas */
+    padding: 2rem 0;
 }
-
 
 
 
@@ -139,12 +143,13 @@ a{
 
 /* FOOTER SECTION */
 
-
 .footer {
     background-color: var(--negro);
     color: #fff;
     text-align: center;
     padding: 3rem 0;
+    width: 100%;
+    margin-top: auto;
 }
 
 .footer-container {
@@ -248,23 +253,22 @@ a{
 
 
 
-
-
-
-/* Responsive Styles */
 @media (max-width: 768px) {
     .nav {
         padding: 2rem 4rem;
         position: relative;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+
     }
 
     .menu-toggle {
+        order: 1; /* Changed from 2 to 1 to move to the left */
         display: block;
+        
     }
 
     .nav-menu {
-        padding: 0 1rem;
-
         display: none;
         flex-direction: column;
         align-items: center;
@@ -278,228 +282,69 @@ a{
         z-index: 1000;
     }
 
+    .nav-menu.active {
+        display: flex;
+    }
+
+
     .mainText {
         padding: 0 5rem;
         align-items: center;
     }
 
-    .mainContent {
-        min-height: 60vh;
-        align-items: center;
+
+    .logo {
+        order: 2; /* Changed from 1 to 2 to move to the center */
+        margin: 0 auto; /* Centers the logo */
+        position: absolute; /* Position absolutely */
+        left: 50%; /* Position at 50% from the left */
+        transform: translateX(-50%); /* Shift back by half its width */
     }
 
-    .cuadritoDoble {
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .cuadrito {
-        width: 100%;
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .nav {
-        padding: 1rem 2rem;
-    }
-
-    .mainText {
-        padding: 0 2rem;
-    }
-}
-
-
-
-
-
-@media (max-width: 768px) {
-    .nav {
-        flex-wrap: nowrap; /* Evita que los elementos se envuelvan a otra línea */
-        padding: 2rem 4rem;
-        position: relative;
-        justify-content: space-between; /* Mantiene el espaciado entre logo, toggle e íconos */
-    }
-
-    .menu-toggle {
-        display: block;
-        order: 2;
-    }
-
-    .nav-menu {
-        padding: 0 3rem;
-
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: white;
-        padding: 1rem 0;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        z-index: 1000;
-    }
-
-    .nav-menu.active {
-        display: flex;
-        padding: 0 3rem;
-
-    }
 
     .icons {
         order: 3;
-        justify-content: flex-end; /* Alinea los íconos a la derecha */
-        width: auto; /* Evita que ocupe todo el ancho */
+        justify-content: flex-end;
+        width: auto;
     }
 
-    .logo {
-        order: 1;
+    .logo h2{
+        font-size: 2.5rem;
     }
+
+
+
 }
 
+
+
+
+
 @media (max-width: 480px) {
+    
     .nav {
         padding: 1rem 2rem;
     }
-
+    
     .nav-menu {
-        padding: 0 3rem;
-
-        gap: 0.75rem;
+        gap: 2rem;
     }
 
     .icons {
-        gap: clamp(rem, 1.5vw, 1rem); /* Reduce el espacio entre íconos en pantallas muy pequeñas */
+        gap: clamp(rem, 1.5vw, 1rem);
     }
-}
 
-
-
-
-@media (max-width: 768px) {
-    .mainText {
-        padding: 0 5rem;
+    .icons img, .icons svg, .icons i {
+        width: 1.8rem; 
+        height: 1.8rem; 
+        font-size: 1.8rem; 
     }
-    
-    .mainContent {
-        min-height: 60vh;
-        align-items: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .mainText {
-        padding: 0 2rem;
-    }
-}
-
-
-
-
-
-
-
-
-@media (max-width: 768px) {
-
 
     .logo h2{
         font-size: 2rem;
     }
 
-    .container {
-        grid-template-columns: 1fr;
-        margin: 3rem auto;
-        width: 100%; /* Ensure it takes most of the width */
-        padding: 1rem; /* Add some padding */
-    }
-
-    .right-section {
-        width: 100%; /* Ensure full width */
-    }
-
-    .cuadritoDoble {
-        flex-direction: column; /* Stack items vertically */
-        gap: 2rem; /* Add space between stacked items */
-    }
-
-    .cuadrito {
-        width: 100%; /* Full width for all items */
-        text-align: center; /* Center text */
-    }
-
-    .cuadrito--main {
-        height: auto;
-        align-items: center; /* Center content */
-        text-align: center; /* Center text */
-    }
-
-    .cuadrito--main button {
-        margin: 0 auto; /* Center the button */
-    }
-
-    .backPackText {
-        align-items: center; /* Center text in backpack section */
-    }
-
-    
 }
-
-
-
-
-
-
-
-
-
-@media (max-width: 412px) {
-    .mainContent::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('../img/bc.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        transition: transform 0.5s ease;
-        transform: scale(1);
-        z-index: -1;
-        background-position: -39rem center; /* Mueve el fondo 50px a la izquierda */
-    }
-}
-
-
-
-
-
-
-@media (max-width: 390px) {
-    .mainContent::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('../img/bc.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        transition: transform 0.5s ease;
-        transform: scale(1);
-        z-index: -1;
-        background-position: -35rem center; /* Mueve el fondo 50px a la izquierda */
-    }
-}
-
-
-
 
 
 
